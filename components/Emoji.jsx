@@ -1,0 +1,1 @@
+export default function Emoji({happy}){ return <span style={{fontSize:32}}>{happy ? '😄' : '😢'}</span> }

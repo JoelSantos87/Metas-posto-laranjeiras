@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: metas-posto-laranjeiras
+    env: docker
+    repo: https://github.com/JoelSantos87/Metas-posto-laranjeiras.git
+    branch: main
+    plan: starter
+    dockerfilePath: Dockerfile
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npm start
+    envVars:
+      - key: postgresql://posto_laranjeiras_user:YOJnDGGr5t4Le52ZjcpIQelpIzcncdqk@dpg-d3t86hur433s73ec90jg-a/posto_laranjeiras
+        sync: false
+      - key: rotosojo3007@@
+        sync: false
+databases:
+  - name: metas-posto-db
+    plan: starter
