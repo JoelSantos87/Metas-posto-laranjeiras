@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --name init",
-    "seed": "ts-node --transpile-only prisma/seed.ts"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "prisma:generate": "prisma generate",
+  "prisma:migrate": "prisma migrate deploy",
+  "seed": "node prisma/seed.js",
+  "postinstall": "prisma generate && node prisma/seed.js"
+}
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie": "^1.0.2",
