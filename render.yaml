@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: metas-posto-laranjeiras
+    env: docker
+    repo: https://github.com/YOUR_USERNAME/metas-posto-laranjeiras
+    branch: main
+    plan: starter
+    dockerfilePath: Dockerfile
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+databases:
+  - name: metas-posto-db
+    plan: starter
